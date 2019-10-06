@@ -15,9 +15,5 @@ if (is_file($config)) {
     die('Error not file: ' . $config);
 }
 
-
-
-//$Mysql = new Mysql();
-//echo "\n" . $Mysql->Begin(); 
 $Soffice = new Soffice();
-$Soffice->Working();    
+$Soffice->Working();

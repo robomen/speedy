@@ -1,7 +1,6 @@
 <?php
 
 class Soffice {
-
     const cns_table = 'Soffice';
 
     /*
@@ -9,7 +8,7 @@ class Soffice {
      * ResultCountry = 100
      * ResultCountry = BG
      *  ResultCountry = БЪЛГАРИЯ
-     * 
+     *
      * office
      * ResultOfficeEx = id
      * ResultOfficeEx = name
@@ -18,7 +17,7 @@ class Soffice {
      */
 
     public function Install() {
-        //create table 
+        //create table
     }
 
     private function DbTableCreate() {
@@ -43,8 +42,6 @@ class Soffice {
         $password = Sdy::$password;
         $server = Sdy::$server;
         $eps = new EPSFacade(new EPSSOAPInterfaceImpl($server), $username, $password);
-//  $arrResultOfficesEx = $eps->listOfficesEx($name, $siteId);
-//$cou;
         $name = 'pleven';
         $name = null;
         $siteId = null;
@@ -83,22 +80,17 @@ class Soffice {
                 $query .= ' "' . $of_postcode . '", "' . $of_StreetId . '", ';
                 $query .= ' "' . $of_QuarterId . '", "' . $of_CoordTypeId . '", ';
                 $query .= ' "' . $of_CoordX . '", "' . $of_CoordY . '" )';
-//                echo "\n" . $query . "\n";
                 $Mysql->query($query);
                 echo $Mysql->error;
-//                break;
             }
             unset($Mysql);
         }
 
-//listOfficesEx($eps);
         return true;
     }
 
     public function listOfficesEx($eps) {
-//    $siteId = $username = $_REQUEST['siteId'];
         $siteId = $username = null;
-//    $name = $_REQUEST['name'];
         $name = 'PLEVEN';
         try {
             $arrResultOfficesEx = $eps->listOfficesEx($name, $siteId);
@@ -195,5 +187,4 @@ class Soffice {
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 ';
     }
-
 }

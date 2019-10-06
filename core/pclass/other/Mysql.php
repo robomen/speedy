@@ -1,7 +1,6 @@
 <?php
 
 class Mysql extends mysqli {
-
     static public $db_host;
     static public $db_user;
     static public $db_pass;
