@@ -15,5 +15,5 @@ if (is_file($config)) {
     die('Error not file: ' . $config);
 }
 
-$Soffice = new Soffice();
-$Soffice->Working();
+$SExtractData = new SExtractData();
+$SExtractData->Working();

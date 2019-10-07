@@ -1,6 +1,6 @@
 <?php
 
-class Soffice {
+class SExtractData {
     const BDOFFICE = 'speedy_office';
     const DBCITY = 'speedy_city';
 
@@ -16,9 +16,13 @@ class Soffice {
         $name = null;
 
         // list countries
-        // $countryList = $eps->listCountries($name);
+        $countryList = $eps->listCountriesEx($name);
+        echo '<pre>';
+        print_r($countryList);
+        echo '</pre>';
+        exit;
         // Austria, no results for any country
-        // $arrResultOfficesEx = $eps->listOfficesEx($name, null, null, 40);
+        $arrResultOfficesEx = $eps->listOfficesEx($name, null, null, 40);
 
         $arrResultOfficesEx = $eps->listOfficesEx($name);
         $arrJsonResult = array();
